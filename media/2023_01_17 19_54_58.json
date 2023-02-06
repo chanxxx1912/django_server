@@ -1,0 +1,15 @@
+{"sample1array": [{
+
+    "sample1": "samplevalue1",
+    "sample2": "samplevalue2",
+    "sample3": "samplevalue3"
+    }],
+    "sample2array": [{
+    
+    "sample1": "samplevalue1",
+    "sample2": "samplevalue2",
+    "sample3": "samplevalue3"
+    }],
+    "sample2": "samplevalue2",
+    "sample3": "samplevalue3"
+}

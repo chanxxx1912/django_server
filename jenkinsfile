@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage("Build") {
+            steps {
+                sh "docker build -t django-deployment ."
+            }
+        }
+        stage("Test") {
+            steps {
+                sh "docker run django-deployment  python3 manage.py test"
+            }
+        }
+        stage("Push to Docker registry") {
+            steps {
+                sh "docker tag latest chanxxx1999/django-deployment "
+                sh "docker push chanxxx1999/django-deployment "
+            }
+        }
+        stage("Deploy to Kubernetes") {
+            steps {
+                sh "kubectl apply -f deployment.yml"
+            }
+        }
+    }
+}
